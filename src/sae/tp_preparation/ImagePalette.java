@@ -1,5 +1,9 @@
 package sae.tp_preparation;
 
+import sae.tp_preparation.normes.Norme1994;
+import sae.tp_preparation.normes.NormeCielab;
+import sae.tp_preparation.normes.NormeRedmean;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -20,7 +24,9 @@ public class ImagePalette {
     public static void main(String[] args) {
         try {
             copyImage("img/the_mountain.png", "img/the_mountain_palette.png", new Palette(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}));
-            copyImage("img/the_mountain.png", "img/the_mountain_palette_redmean.png", new PaletteRedmean(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}));
+            copyImage("img/the_mountain.png", "img/the_mountain_palette_redmean.png", new PaletteNorme(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}, new NormeRedmean()));
+            copyImage("img/the_mountain.png", "img/the_mountain_palette_cielab.png", new PaletteNorme(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}, new NormeCielab()));
+            copyImage("img/the_mountain.png", "img/the_mountain_palette_1994.png", new PaletteNorme(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}, new Norme1994()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
