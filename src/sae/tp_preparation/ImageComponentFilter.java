@@ -1,3 +1,5 @@
+package sae.tp_preparation;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;

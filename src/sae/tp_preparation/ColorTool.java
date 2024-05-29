@@ -1,3 +1,5 @@
+package sae.tp_preparation;
+
 import java.awt.*;
 
 /**

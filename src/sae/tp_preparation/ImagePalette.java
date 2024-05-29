@@ -1,9 +1,10 @@
+package sae.tp_preparation;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Classe permettant de copier une couleur en une palette de couleurs.
@@ -11,7 +12,7 @@ import java.util.Arrays;
  * Question 2.2 :
  * "Augmentez le nombre de couleurs parmi lesquelles choisir dans le tableau (par exemple
  * cf image 5). Le choix de la couleur la plus proche nécessite une recherche de minimum.
- * Pour cela, créez une classe Palette avec un tableau de couleurs en attribut et une
+ * Pour cela, créez une classe sae.tp_preparation.Palette avec un tableau de couleurs en attribut et une
  * méthode getPlusProche qui retourne la couleur du tableau la plus proche de la couleur
  * passée en paramètre."
  */
@@ -19,6 +20,7 @@ public class ImagePalette {
     public static void main(String[] args) {
         try {
             copyImage("img/the_mountain.png", "img/the_mountain_palette.png", new Palette(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}));
+            copyImage("img/the_mountain.png", "img/the_mountain_palette_redmean.png", new PaletteRedmean(new Color[]{Color.BLUE, Color.black, Color.CYAN, Color.GREEN, Color.WHITE}));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

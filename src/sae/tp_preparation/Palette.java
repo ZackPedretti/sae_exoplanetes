@@ -1,3 +1,5 @@
+package sae.tp_preparation;
+
 import java.awt.*;
 
 /**
@@ -6,7 +8,7 @@ import java.awt.*;
  * Question 2.2
  * "Augmentez le nombre de couleurs parmi lesquelles choisir dans le tableau (par exemple
  * cf image 5). Le choix de la couleur la plus proche nécessite une recherche de minimum.
- * Pour cela, créez une classe Palette avec un tableau de couleurs en attribut et une
+ * Pour cela, créez une classe sae.tp_preparation.Palette avec un tableau de couleurs en attribut et une
  * méthode getPlusProche qui retourne la couleur du tableau la plus proche de la couleur
  * passée en paramètre."
  */
@@ -26,7 +28,10 @@ public class Palette {
         int minDistance = ColorTool.getDistance(rgb, colors[0]);
         Color nearestColor = colors[0];
         for(Color c : colors){
-            if (ColorTool.getDistance(rgb, c) < minDistance) nearestColor = c;
+            if (ColorTool.getDistance(rgb, c) < minDistance){
+                nearestColor = c;
+                minDistance = ColorTool.getDistance(rgb, c);
+            }
         }
         return nearestColor.getRGB();
     }
